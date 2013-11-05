@@ -1,0 +1,200 @@
+body,div,
+dl,dt,dd,
+ul,ol,li,
+h1,h2,h3,h4,h5,h6,
+pre,form,fieldset,input,
+p,blockquote,label,
+th,td,html,
+table,tr,td {margin:0;padding:0;}
+
+body {
+	padding:5px 10px 10px 10px;
+	background:#e8ecdd;
+}
+
+a {
+	text-decoration:none;
+	color:black;
+}
+a:visited {
+}
+
+img {
+	padding:0;
+	margin:0;
+	border:none;
+}
+
+img#pacman,
+img.button {
+	vertical-align:bottom;
+}
+
+#toggleMode {
+	float:left;
+}
+
+
+div#navigation {
+	clear:both;
+}
+
+ul.navigation {
+	font-size:16px;
+	border:1px solid #e8ecdd;
+	border:none;
+	border-bottom:1px solid #e7dab0; 
+	list-style-type: none;
+	padding: 3px 0px 3px 10px;  /* $1 $2 (x) $4*/
+
+}
+ul.navigation li {
+	list-style:none;
+	display:inline;
+	padding:4px 0px 4px 0px; /* (x) */
+}
+ul.navigation li.navigation {
+	color:black;
+}
+ul.navigation li.selected  {
+		/*
+	border:1px solid #e7dab0;
+	border:1px solid #ff00d8;
+	border-bottom:1px solid #e8ecdd;
+	border-top:1px solid red;
+	border-top:1px solid #e7dab0;
+	*/
+	/*padding:4px 0px 4px 0px; /* $1 $2 (x) $4 */
+}
+ul.navigation li.navigation a {
+	background-color: #e8ecdd;
+	color: #666; /* set unselected tab link color as desired */
+	margin-right: 0px; /* set additional spacing between tabs as desired */
+	text-decoration: none;
+	border-bottom: none;
+	border-top:1px solid #e8ecdd;
+
+	/*
+	font-family: Impact, Charcoal, sans-serif;
+	font-family: 'Century Gothic', sans-serif;
+	font-family: 'Courier New', Courier, monospace;
+	font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	font-family: 'Lucida Console', Monaco, monospace;
+	*/
+
+	padding: 4px 4px 3px 4px; 
+}
+ul.navigation li.selected a {
+	background-color: #e8ecdd;
+	color: #000;
+	position: relative;
+	top: 1px;
+	border: 1px solid #e7dab0;
+	border-top: 1px solid #e7dab0;
+	border-bottom:none;
+	padding-top: 4px; /* must change with respect to padding (X) above and below */
+}
+
+ul.navigation li.page-title {
+	padding:0;
+}
+ul.navigation li.page-title a.page-title {
+	float:right;
+	margin-right: 0px; /* set additional spacing between tabs as desired */
+	text-decoration: none;
+	font-style:italic;
+	font-weight: bold;
+	font-family: 'Courier New', Courier, monospace;
+	/*
+	border-bottom:1px solid #e7dab0;
+	border-top:1px solid #e7dab0;
+	border-left:1px solid #e7dab0;
+	*/
+	color: #e7dab0;
+	border-bottom: none;
+	border-right:1px solid #e7dab0;
+	padding: 11px 3px 0px 0px;
+	line-height:9px;
+	font-size:15px;
+}
+
+form.persillerietLogin {
+	width: 22em;
+}
+
+form.persillerietLogin input {
+	width: 12em;
+}
+
+form.persillerietLogin label {
+	display:block;
+	float:left;
+	width:6em;
+	text-align:right;
+	margin:0px 1em 0px 0px;
+}
+form.persillerietLogin fieldset legend {
+	border:1px solid gray;
+	border-bottom:none;
+	margin:0px 0px 1.2em 0px;
+}
+form.persillerietLogin fieldset {
+	padding:0px 5px 10px 5px;
+}
+
+.cleardiv { clear:both; }
+.hidden { display:none; }
+.block { display:block; }
+.inline-block { display:inline-block; }
+
+/* 
+ * bundels/persilleriet/js/flatselect.js 
+ */
+
+select.flat:disabled {
+	background-color: gray;
+}
+
+select.flat {
+	border:1px solid #e7dab0; 
+	margin:0;
+	padding:0;
+}
+
+span.flatSelectBox.disabled { 
+	background-color: gray; 
+}
+span.flatSelectBox { 
+	font-size:11px; 
+	background-color: #f5f0de; 
+	color:#7c7c7c; 
+	padding:5px 7px 5px 7px; 
+	border:1px solid #e7dab0; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+	border-radius: 5px 5px; 
+	line-height: 11px; 
+} 
+span.flatSelectBox.changed { 
+	background-color: #F39814;
+	background-color: #f0dea4;  
+	color: black;
+} 
+.flatSelectBoxInner { 
+	background:url(/symfony/web/bundles/persilleriet/images/select-check.png) no-repeat center right; 
+}
+
+#tooltip {
+	position: absolute;
+	z-index: 3000;
+	background-color: #eee1b3;
+	/*border: 1px solid #e7dab0;*/
+	border: 1px solid #000;
+	padding: 2px 4px 2px 4px;
+	opacity: 0.90;
+}
+#tooltip h3, #tooltip div { 
+	margin: 0; 
+	font-weight:normal;
+	font-size: 12px;
+}

@@ -1,0 +1,500 @@
+
+#toggleMode li {
+
+	list-style:none;
+	display:inline;
+	padding:3px;
+	color:black;
+}
+
+#toggleMode li.enabled {
+	font-weight:bold;
+}
+
+/*  
+ *  ACTION-PICKER
+ */
+
+
+div#actionPicker {
+	border:none;
+	border-left:1px solid #e7dab0; 
+	border-bottom:1px solid #e7dab0; 
+	padding:7px 4px;
+}
+div#actionPicker div.action {
+	float:left;
+}
+div#actionPicker div.db-table-pagination {
+	float:left;
+}
+
+
+
+/*
+ * BEHOLDNING  - 
+ * SELCTION / FILTER OVERVIEW 
+ * partnum(7.4)  name(20.8)     amount{ input(3) a(1) a(1) }(5)  ~ 30
+ *
+ */
+
+#listWidget {
+		height:500px;
+		width:33em;
+		border:1px solid gray;
+}
+
+#listWidget div.list-item {
+	/*background: #b56f6f;*/
+	height:1em;
+}
+
+.list-item-prod-partnum {
+	/*background: #38c485;*/
+	height:1em;
+	font-family:monospace;
+	font-size:0.8em;
+	font-style: italic;
+	/*margin-right: 10px;*/
+	padding:0px 0px 0px 0.4em;
+	width:6em;
+	display:inline-block;
+	float:left;
+}
+.list-item-prod-name {
+	/*background: #6987c4;*/
+	height:1em;
+	display:inline-block;
+	padding:0px 0.4px 0px 0.4px; 
+	width:20em;
+	float:left;
+
+}
+div .list-item-amount {
+	/*background: #bf8417;*/
+	height:1em;
+	/*height: 0.91em;*/
+	/*padding:0.2em 0 0 0;*/
+	float:right;
+}
+.list-item-amount input.amount-input {
+	height:1em;
+	width: 3em;
+	text-align:right;
+	display:inline-block;
+	border:none;
+	margin:0px 0px 0px 0px;
+	padding:0;
+	position:relative; top:0;
+	background:#b5b3ac;
+	float:left;
+}
+
+/*.list-item-amount a img { padding:0; margin:0; }*/
+.list-item-amount a img {
+	height:1em;
+	/*background: #e64b12;*/
+	float:left;
+	margin:0;
+	padding:0px 4px 0px 4px;
+	padding:0;
+	width:0.87em;
+	display:inline-block;
+	/*vertical-align:center;*/
+	vertical-align:middle;
+}
+.list-item-amount a.increment { }
+.list-item-amount a.decrement { }
+
+/*
+ * BEHOLDNING  - CAREGORIES 
+ *
+ */
+
+#categoryWidget {
+	height:500px;
+	width:7em;
+	border:1px solid gray;
+
+}
+.category-item {
+	font-size:0.9em;
+	padding:0.0em 0.3em 0.0em 0.3em;
+}
+
+/*
+ * BEHOLDNING  - VISIBLE PRODUCTS
+ *
+ */
+
+#subsetWidget {
+		height:500px;
+		width:250px;
+		border:1px solid gray;
+}
+#subsetWidget div a {
+	font-size:0.8em;
+
+}
+
+
+.ui-selecting { background: #FECA40; }
+.ui-selected { background: #F39814; color: black; }
+
+
+
+div.beholdning-widget {
+	font-family: 'sans serif';
+	float:left;
+	padding:1px 1px 1px 1px;
+}
+
+h2.widget-title {
+		font-size: 14px;
+		padding:0;
+		margin:0;
+
+}
+
+td {
+	vertical-align: top;
+}
+
+
+table.beholdning td {
+	vertical-align: top;
+}
+
+/*
+ * BEHOLDNING - DIALOGS
+ */
+
+table.filters-list th {
+	text-align: left;
+	font-size:10px;
+	padding-left:20px;
+}
+table.filters-list {
+	font-size: 0.8em;
+	border:collapse;
+}
+div.filters-list {
+		/*
+	overflow:scroll;
+	width:750px;
+	height: 450px !important;
+	*/
+
+}
+
+/*
+ * SPREADSHEET WIDGET
+ */
+
+table.spreadsheet-table {
+	border-style:none;
+	margin:0;
+	padding:0;
+	border-collapse:collapse;
+	border-spacing:0;
+	border-bottom:	1px solid #e7dab0; 
+
+}
+
+.varenavn-cell {
+	min-width:35em;
+}
+th.spreadsheet-header-department {
+	text-align:left;
+}
+th.spreadsheet-header-product {
+	text-align:left;
+}
+
+.spreadsheet-table td {
+	padding:0px 0.5em 0px 0.5em;
+	margin:0;
+	vertical-align:middle;
+}
+
+td.spreadsheet-table-quantity {
+	font-family:monospace;
+	font-size:0.9em;
+	background:#ebdac5;
+	width:2em;
+	text-align:right;
+	border: 		1px solid #faebd7;
+	border-bottom:	1px solid #e7dab0; 
+}
+td.spreadsheet-table-quantity-alt {
+	background:#f0e1ce;
+}
+td.spreadsheet-table-item {
+	width:35em;
+	border-bottom:1px solid #e7dab0; 
+
+}
+td.spreadsheet-table-item-alt {
+	background:#f5e4ce;
+}
+
+
+/*  
+ *
+ * PLACE-DATE PICKER
+ *
+ */
+
+
+.loading-date {
+	background-image: url(/symfony/web/bundles/persilleriet/images/loading.bar.gif);
+	background-repeat: right top;
+}
+
+
+h2.searchProduct {
+	float:left;
+}
+input.searchProduct {
+	float:right;
+
+}
+/*
+ * DB CRUD TABLE WIDGET
+ *
+ */
+div.db-table-pagination {
+	border:none;
+}
+div.db-table-pagination ul {
+	font-size: 11px;
+	margin:0px 8em 0px 12em;
+	padding:0px;
+	list-style-type: none;
+	display:inline-block;
+}
+div.db-table-pagination ul li {
+	/*width:3em;*/
+	width:2em;
+	display:inline;
+	list-style:none;
+	white-space:nowrap;
+	padding:0px 1px 0px 1px;
+	margin:0px;
+	text-align:center;
+	border: none;
+}
+div.db-table-pagination ul li a.arrows {
+	padding:0px 4px;
+}
+div.db-table-pagination ul li a {
+	font-family: 'Lucida Console', Monaco, monospace;
+	display:inline-block;
+	width:2em;
+	border: none;
+
+	/* persilleriet.no navigation 
+	font-family: 'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,Verdana;
+	*//*
+	font-family: Impact, Charcoal, sans-serif;
+	font-family: 'Century Gothic', sans-serif;
+	font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	font-family: 'Courier New', Courier, monospace;
+	*/
+}
+div.db-table-pagination a.pagination-current {
+	text-decoration:underline;
+	border: none;
+}
+div.db-table-pagination a:hover {
+	color:#e7dab0; 
+	text-decoration:underline;
+	background:#2b2b2b;
+	border: none;
+}
+
+div.db-table-pagination li.input {
+	width: 12em;
+	padding:4px 0px 0px 0px;
+	margin:0px 0px 0px 20px;
+	border: none;
+	text-align:center;
+}
+div.db-table-pagination input {
+	padding:0px;
+	margin:0px;
+	font-size:11px;
+	font-family: 'Lucida Console', Monaco, monospace;
+	background:none;
+	width:2em;
+	display:inline;
+	border:none;
+	text-align:center;
+}
+table.db-table tbody {
+}
+table.db-table {
+	margin-top: 10px;
+	border-style:none;
+	border-collapse:collapse;
+	border-spacing:0;
+	word-wrap:break-word;
+	overflow:hidden; /* Fallback for IE/Mac */
+
+}
+
+/* DB CRUD TABLE COLUMNS */
+
+div.save-delete img {
+
+} /* buttons */
+div.save-delete { /* buttons */
+	width:48px;
+}
+
+table.db-table tr td select.double-select-primary,
+table.db-table tr td select.double-select-secondary {
+	font-size:10px;
+	width:9em;
+}
+option.admin-input-option-role {
+	font-size:12px;
+	font-family: monospace;
+}
+.admin-input-sub {
+}
+table.db-table tr th.crud-header-address,
+table.db-table tr th.crud-header {
+	width: 6em; 
+	padding:0px 0px 4px 4px;
+	margin-bottom:7px;
+	text-align: left;
+	font-size:0.7em;
+}
+
+table.db-table .admin-input {
+	/* width: 7em; */
+	width: 6em; 
+	/* max-width: 7em; */
+	/*min-width: 3em; */
+	overflow: hidden;
+}
+
+table.db-table tr th.orderby {
+	text-decoration: underline;
+}
+
+table.db-table tr td textarea {
+	height: 1.1em;
+	
+}
+table.db-table tr td input {
+	background:#e8ecdd;
+	border:none;
+	/* input[type='text'] */
+	text-overflow:ellipsis;
+}
+table.db-table tr.altrow td,
+table.db-table tr.altrow td input {
+	background: #dfe3d5;
+}
+table.db-table tr th {
+	border-bottom:	1px solid #e7dab0; 
+}
+
+table.db-table tr td.admin-input .category-tag .altrow,
+table.db-table tr th.admin-input .category-tag .altrow,
+table.db-table tr td.admin-input .category-tag,
+table.db-table tr th.admin-input .category-tag {
+	width:12em;
+	/* whatever */
+	
+}
+
+table.db-table tr td div.product-category,
+table.db-table tr td.product-category,
+table.db-table tr th.product-category {
+	width: 200px;
+}
+
+table.db-table tr td.checkbox,
+table.db-table tr th.checkbox, 
+table.db-table tr.altrow td.checkbox,
+table.db-table tr.altrow th.checkbox {
+	width: 2em;
+}
+table.db-table tr td.zipcode,
+table.db-table tr td.zipcode input,
+table.db-table tr th.zipcode {
+	width: 4em;
+}
+
+
+.db-table td {
+	/* border-right: 1px solid red; */
+	border: 		1px solid #faebd7;
+	border-bottom:	1px solid #e7dab0; 
+}
+
+/* 
+// 
+// tag-it widget 
+// 
+*/ 
+ul.tagit {
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 11px;
+    padding: 1px 1px 1px 1px;
+	height: 20px;
+    overflow: auto;
+    margin-left: inherit; /* usually we don't want the regular ul margins. */
+    margin-right: inherit;
+}
+ul.tagit li {
+    display: block;
+    float: left;
+    margin: 0px 5px 2px 0;
+}
+ul.tagit li.tagit-choice {
+    padding: .2em 18px .2em .5em;
+    position: relative;
+    line-height: inherit;
+}
+ul.tagit li.tagit-new {
+    padding: .25em 4px .25em 0;
+}
+
+ul.tagit li.tagit-choice a.tagit-label {
+    cursor: pointer;
+    text-decoration: none;
+}
+ul.tagit li.tagit-choice .tagit-close {
+    cursor: pointer;
+    position: absolute;
+    right: .1em;
+    top: 50%;
+    margin-top: -8px;
+}
+
+/* used for some custom themes that don't need image icons */
+ul.tagit li.tagit-choice .tagit-close .text-icon {
+    display: none;
+}
+
+ul.tagit li.tagit-choice input {
+    display: block;
+    float: left;
+    margin: 2px 5px 2px 0;
+}
+ul.tagit input[type="text"] {
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing:         border-box;
+
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: inherit;
+    background-color: inherit;
+    outline: none;
+}
