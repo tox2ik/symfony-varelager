@@ -1,0 +1,28 @@
+{# src/Persilleriet/VarelagerBundle/Resources/views/Varelager/navigation.html.twig #}
+{% for a in articles %}
+<a href="{{ a }}">{{ a }}</a>, 
+{% endfor %}
+{#
+WTF {{ hello }}
+
+{% for link in links %}
+<a href="{{ link.href }}">{{ link.html }}</a>
+{% endfor %}
+#}
+<div id="navigation">
+<ul class="navigation">
+	{% for link in links %}
+	<li class="{{link.selected}}" ><a href="{{ link.href }}">{{ link.html }}</a></li>
+	{% endfor %}
+	{#
+	#}
+	{#
+	<li {{selected}}> <a href="{{ path('_varelager_bestilling') }}">Bestilling</a> </li>
+	<li {{selected}}> <a href="{{ path('_varelager_historikk') }}">Historikk</a> </li>
+	{% if is_granted('ROLE_ADMIN') or is_granted('ROLE_MANAGER') or is_granted('ROLE_ORDER_CLERK') %}
+	<li> <a href="{{ path('_varelager_adminpanel') }}">Administrasjon</a> </li>
+	{% endif %}
+	#}
+	<li class="navigation page-title"> <a href="#" class="page-title">Persilleriet Varelager</a></li>
+</ul>			
+</div>

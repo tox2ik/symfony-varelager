@@ -1,0 +1,16 @@
+{% extends 'VarelagerBundle::layout.html.twig' %}
+
+{% block title %}Persilleriet{% endblock %}
+{% block header %}<h1>Persilleriet</h1>{% endblock %}
+
+{% block navigation %} 
+<a href="{{ path('_varelager') }}">varelager</a><br />
+{% endblock %}
+
+
+{% block pageFlesh %}
+{% if app.environment == 'dev' %}
+<!-- <img src="{{ asset('bundles/acmedemo/images/welcome-configure.gif') }}" alt="Configure your appication" /> -->
+{% endif %}
+{% endblock %}
+

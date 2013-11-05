@@ -1,0 +1,47 @@
+{% extends 'VarelagerBundle::layout.html.twig' %}
+
+{% block title %}Varelager{% endblock %}
+
+{% block resources %}
+	{{ parent() }}
+	<link type="text/css" href="{{ asset('bundles/varelager/css/varelager.css') }}"  rel="stylesheet" />
+	<script type="text/javascript" src="{{ asset('bundles/varelager/js/varelager.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/varelager/js/widgets-varelager.js') }}"></script>
+{% endblock %}
+
+
+{#% block header %}
+<h1 class="page-title">Varelager</h1>
+{% endblock %#}
+
+{% block navigation %}
+{{ parent() }}
+{% endblock %}
+
+
+{% block actionPicker %}
+	Utsalgssted: 
+	<select id="varelagerDepartment" name="department" class="flat">
+		{% for department in departments %}
+		<option value="{{ department.id }}">{{ department.name }}</option>
+		{% endfor %}
+	</select>
+	
+	Handling:
+	<select id="varelagerAction" name="action" class="flat">
+		{% for action in actionChoices %}
+		<option value="{{ action.value }}">{{ action.legend }}</option>
+		{% endfor %}
+		<!--
+		<option value="saveStock">Lagre beholdning</option>
+		<option value="saveFilter">Lagre utvalg som filter</option> 
+		-->
+	</select>
+	<img id="pacman" class="hidden ajaxindicator" alt="pacman" src={{ asset('bundles/persilleriet/images/pacman.gif') }} />
+	<a id="go" href="#" title="Utf&oslash;r" onclick="jQuery.varelager.doAction(); return false;" 
+		><img class="button" alt="go" src={{ asset('bundles/persilleriet/images/carrot.png') }} /></a> 
+	
+{% endblock %}
+
+{% block pageFlesh %}
+{% endblock %}

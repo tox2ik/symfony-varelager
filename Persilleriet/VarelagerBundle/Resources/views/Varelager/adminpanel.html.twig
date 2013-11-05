@@ -1,0 +1,81 @@
+{% extends 'VarelagerBundle:Varelager:common.html.twig' %}
+
+{% block title %}Varelager{% endblock %}
+
+
+		{# filter | e(js) 
+		{% autoescape false %}
+		{% if products %}
+		
+		jQuery('#spreadSheetWidget').spreadsheet({
+			enable_listitem_amount: 1,
+			products: {{products}} 
+		});
+		jQuery('#spreadSheetWidget').spreadsheet('sumQuantities');
+		{% endif %}
+		{% endautoescape %}
+		#}
+
+{% block resources %}
+	{{ parent() }}
+	<script type="text/javascript" src="{{ asset('bundles/varelager/js/widgets-admin.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/varelager/js/widgets-admin.init.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/jquery.tagit.js') }}"></script>
+	{#
+	<link type="text/css" href="{{ asset('css/jquery.tagit.css') }}"  rel="stylesheet" />
+	<script type="text/javascript" src="{{ asset('bundles/persilleriet/js/multiselect.js') }}"></script>
+	<link type="text/css" href="{{ asset('bundles/persilleriet/css/multiselect.css') }}"  rel="stylesheet" />
+	#}
+	<script type="text/javascript">
+	jQuery(function(){
+		//jQuery('#placeDateWidget').placedate();
+	});
+	</script>
+{% endblock %}
+
+
+{#% block header %}
+<h1 class="page-title">Varelager - Adminpanel</h1>
+{% endblock %#}
+
+{% block navigation %}
+	{{ parent() }}
+{% endblock %}
+
+{#% block navigation %}
+{% endblock %#}
+
+
+{% block actionPicker %}
+	<div id="actionPicker">
+		<div class="action">
+			Hent:
+			<select id="varelagerAction" name="action" class="flat">
+				{% for action in actionChoices %}
+				<option value="{{ action.value }}">{{ action.legend }}</option>
+				{% endfor %}
+			</select>
+			<img id="pacman" class="hidden ajaxindicator" alt="pacman" src={{ asset('bundles/persilleriet/images/pacman.gif') }} />
+			<a id="go" href="#" title="Utf&oslash;r" onclick="jQuery.varelager.doAction(); return false;" 
+				><img class="button" alt="go" src={{ asset('bundles/persilleriet/images/carrot.png') }} /></a> 
+
+			<form action="javascript:void(0);" method="post">
+			<input type="hidden" id="submitURLsaveuser" value="{{ path('_db_saveuser') }}"></input>
+			<input type="hidden" id="submitURLsaveorder" value="{{ path('_db_saveorder') }}"></input>
+			<input type="hidden" id="submitURLsaveproduct" value="{{ path('_db_saveproduct') }}"></input>
+			<input type="hidden" id="submitURLsavesupplier" value="{{ path('_db_savesupplier') }}"></input>
+			<input type="hidden" id="submitURLsavepermissions" value="{{ path('_db_savepermissions') }}"></input>
+			<input type="hidden" id="submitURLdeletesupplier" value="{{ path('_db_deletesupplier') }}"></input>
+			<input type="hidden" id="submitURLdeleteproduct" value="{{ path('_db_deleteproduct') }}"></input>
+			<input type="hidden" id="submitURLdeleteuser" value="{{ path('_db_deleteuser') }}"></input>
+			</form>
+		</div>
+		<div id="actionPickerClearDiv" class="cleardiv"></div>
+	</div>
+{% endblock %}
+
+{% block pageFlesh %}
+
+<div id="dbTableWidget"></div>
+
+{% endblock %}

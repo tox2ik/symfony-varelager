@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}Page title{% endblock %}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {% block resources %}
+
+	<script type="text/javascript" src="{{asset('js/json2.min.js') }}"></script>
+	<script type="text/javascript" src="{{asset('js/jquery.js') }}"></script>
+	<script type="text/javascript" src="{{asset('js/jquery-ui.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/jquery.tooltip.pack.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/jquery.pnotify.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/jquery.tablesorter.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/lib.js') }}"></script>
+	<script type="text/javascript" src="{{asset('bundles/persilleriet/js/flatselect.js') }}"></script>
+	<script type="text/javascript" src="{{asset('bundles/persilleriet/js/menuBox.js') }}"></script>
+	<link type="text/css" href="{{ asset('bundles/persilleriet/css/menuBox.css') }}" rel="stylesheet" />   
+	<link type="text/css" href="{{ asset('bundles/persilleriet/css/persilleriet.css') }}" rel="stylesheet" />   
+	<link type="text/css" href="{{ asset('css/jquery.pnotify.css') }}" rel="stylesheet" />   
+	<link type="text/css" href="{{ asset('css/pepper-grinder/jquery-ui.css') }}" rel="stylesheet" />   
+	<!--link rel="shortcut icon" href="{{ asset('favicon.ico') }}" /-->
+	{% endblock %}
+	</head>
+<body>
+<noscript>
+	This page relies heavily on Javascript.<br />
+	Please enable it in your browser. <br />
+	Try these instructions if you have no idea how to:
+	<a href="http://activatejavascript.org/en/instructions/ie" 
+		title="activatejavascript.org">Activation Instructions</a>
+</noscript>
+
+<!--a href="{{ path('_welcome') }}">
+<img src="{{ asset('bundles/acmedemo/images/logo.gif') }}" alt="Symfony"-->
+
+{% block topmessage %}
+{% if app.session.flash('notice') %}
+<div class="flash-message">
+	<em>Notice</em>: {{ app.session.flash('notice') }}
+</div>
+{% endif %}
+{% endblock %}
+
+<div id="output">
+	{% block header %}
+	{% endblock %}
+
+	{% block navigation %}
+	{#
+	<div id="navigation">
+	<ul>
+		<li {% render "VarelagerBundle:Navigation:isSelectedTab" %}><a href="{{ path('_varelager') }}">Lagerbeholdning</a></li>
+		<li {% render "VarelagerBundle:Navigation:isSelectedTab" %}><a href="{{ path('_varelager_bestilling') }}">Bestilling</a></li>
+		<li {% render "VarelagerBundle:Navigation:isSelectedTab" %}><a href="{{ path('_varelager_historikk') }}">Historikk</a></li>
+		{% if is_granted('ROLE_ADMIN') or is_granted('ROLE_MANAGER') or is_granted('ROLE_ORDER_CLERK') %}
+		<li {% render "VarelagerBundle:Navigation:isSelectedTab" %}><a href="{{ path('_varelager_adminpanel')}}">Administrasjon</a></li>
+		{% endif %}
+	</ul>			
+	</div>
+	#}
+	{% render "VarelagerBundle:Navigation:generateNavigationList" %}
+	{% endblock %}
+
+	{% block actionPicker %}
+	<!--
+	<div class="cleardiv"></div>
+	-->
+	{% endblock %}
+
+	<div id="pageFlesh">
+	{% block pageFlesh  %}
+	<!--
+	<div class="cleardiv"></div>
+	-->
+	{% endblock %}
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+{% extends 'VarelagerBundle:Varelager:common.html.twig' %}
+
+{% block title %}Varelager{% endblock %}
+
+{% block resources %}
+	{{ parent() }}
+	<script type="text/javascript" src="{{ asset('bundles/varelager/js/widgets-beholdning.js') }}"></script>
+	<script type="text/javascript">
+	jQuery(function(){
+		jQuery('#listWidget').selectionlist();
+		jQuery('#categoryWidget').categories();
+		jQuery('#subsetWidget').products();
+	});
+	</script>
+{% endblock %}
+
+
+{#% block header %}
+<h1 class="page-title">Varelager - Beholdning</h1>
+{% endblock %#}
+
+{% block navigation %}
+	{{ parent() }}
+{% endblock %}
+
+
+{% block actionPicker %}
+	<div id="actionPicker">
+	{{ parent() }}
+	<form action="javascript:void(0);" method="post">
+	<input type="hidden" id="submitURLsavestock" value="{{ path('_db_savestock') }}" />
+	<input type="hidden" id="submitURLsavefilter" value="{{ path('_db_savefilter') }}" />
+	<input type="hidden" id="submitURLfetchfilter" value="{{ path('_db_listfilters_dialog', {'format': 'table'}) }}" />
+	<input type="hidden" id="submitURLcreateorder" value="{{ path('_varelager_bestilling') }}" />
+	</form>
+	</div>
+{% endblock %}
+
+{% block pageFlesh %}
+	{{ parent() }}
+
+
+<table class="beholdning">
+	<tr>
+		<td> <h2 class="widget-title">Oversikt</h2> </td>
+		<td> <h2 class="widget-title">Kategorier</h2> </td>
+		<td> 
+			<h2 class="widget-title searchProduct">Varer</h2> 
+			<form name="searchProduct" action="javascript:void(0);" method="post">
+			<input name="searchProductInput" value="Søk.." type="text" class="searchProduct"></input>
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div id="listWidget" class="beholdning-widget"> 
+				<p id="emptyMessage">Ingen varer er valgt.<br>Bruk varelisten eller forhåndlagrede filter. </p>
+			</div>
+
+				<!--div class="list-item ui-widget-content ui-selectee"> hei</div>
+				<div class="list-item ui-widget-content ui-selected"> hade </div-->
+		</td>
+		<td>
+			<div id="categoryWidget" class="beholdning-widget"> </div>
+		</td>
+		<td>
+			<div id="subsetWidget" class="beholdning-widget"> </div>
+		</td>
+	</tr>
+</table>
+
+
+{% endblock %}

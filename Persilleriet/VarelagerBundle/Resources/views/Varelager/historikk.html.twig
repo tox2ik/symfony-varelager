@@ -1,0 +1,65 @@
+{% extends 'VarelagerBundle:Varelager:common.html.twig' %}
+
+{% block title %}Varelager{% endblock %}
+
+{% block resources %}
+	{{ parent() }}
+	<script type="text/javascript" src="{{ asset('bundles/varelager/js/widgets-historikk.js') }}"></script>
+	<script type="text/javascript">
+	jQuery(function(){
+		jQuery('#placeDateWidget').placedate();
+		jQuery('#spreadSheetWidget').spreadsheet();
+
+	});
+	</script>
+{% endblock %}
+
+
+{#% block header %}
+<h1 class="page-title">Varelager - Historikk</h1>
+{% endblock %#}
+
+{% block navigation %}
+	{{ parent() }}
+{% endblock %}
+
+{#% block navigation %}
+{% endblock %#}
+
+
+{% block actionPicker %}
+	<div id=actionPicker>
+	Handling:
+	<select id="varelagerAction" name="action" class="flat">
+		{% for action in actionChoices %}
+		<option value="{{ action.value }}">{{ action.legend }}</option>
+		{% endfor %}
+	</select>
+	<img id="pacman" class="hidden ajaxindicator" alt="pacman" src={{ asset('bundles/persilleriet/images/pacman.gif') }} />
+	<a id="go" href="#" title="Utf&oslash;r"   onclick="jQuery.varelager.doAction(); return false;" 
+		><img class="button" alt="go" src={{ asset('bundles/persilleriet/images/carrot.png') }} /></a> 
+	<form action="javascript:void(0);" method="post">
+	<input type="hidden" id="submitURLcreateorder" value="{{ path('_varelager_bestilling') }}"></input>
+	</form>
+	</div>
+{% endblock %}
+
+{% block pageFlesh %}
+
+<table class="historikk">
+	<tr>
+		<td> <!--h2 class="widget-title">Varenavn</h2--> </td>
+		<td> <h2 class="widget-title">Sted</h2> </td>
+		<td> <h2 class="widget-title">Dato</h2> </td>
+	</tr>
+	<tr>
+		<td class="varenavn-cell"> <div id="spreadSheetWidget" class="spreadsheet-widget"> </div> </td>
+		<td> <div id="placeDateWidget" class="placedate-widget"> </div> 
+
+
+		</td>
+		<td> <div id="datesBox" class="placedate-widget"> </div> </td>
+	</tr>
+</table>
+
+{% endblock %}
